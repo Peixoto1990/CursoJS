@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somando Números</title>
+    <style>
+        body {
+            font: normal 20pt Arial, sans-serif;
+        }
+
+        input {
+            font: normal 20pt Arial, sans-serif;
+            width: 120px;
+        }
+
+        input#somar:focus {
+            color: red;
+        }
+
+        output#res {
+            border: 1px solid black;
+            margin-left: 5px;
+            padding: 1px 10px;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Somando Valores</h1>
+    <input type="number" name="txtn1" id="txtn1"> +
+    <input type="number" name="txtn2" id="txtn2">
+    <input type="button" value="somar" onclick="somar()" id="somar"> = 
+    <output id="res"></output>
+
+    <script>
+        //soma simples em JS
+        function somar() {
+            var tn1 = window.document.getElementById('txtn1')
+            var tn2 = window.document.getElementById('txtn2')
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            var s = n1 + n2
+            window.document.querySelector('output#res').innerText = s
+        }
+    </script>
+</body>
+</html>
