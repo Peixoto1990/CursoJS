@@ -25,6 +25,9 @@ function adicionar() {
         option.innerHTML = `valor ${num[num.length - 1]}`
         window.document.getElementById('quadro').appendChild(option)
     }
+
+    document.getElementById('num').value = ''
+    document.getElementById('num').focus()
 }
 
 function finalizar() {

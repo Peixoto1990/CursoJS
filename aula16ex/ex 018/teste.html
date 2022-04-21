@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>teste recursividade e repetições</title>
+</head>
+<body>
+    
+    <script>
+        let num = [40, 11, 15, 22, 1, 2, 3, 5, 100, 45, 33, 7]
+        let cont = 0
+        let largura = num.length
+        let aux = 0
+
+        for (cont = 0; cont < largura; cont++) { //estrutura de repetição para por um vetor em ordem crescente.
+            for (let c = cont + 1; c < largura; c++) {
+                if (num[cont] > num[c]) {
+                    aux = num[cont]
+                    num[cont] = num[c]
+                    num[c] = aux
+                }
+            }
+        }
+
+        document.write(`colocando o vetor num, em ordem crescente: ${num} <br>`)
+
+        function contarvetor(c1) { //função recursiva para somar os valores do vetor
+            if (c1 < 1) {
+                return 0
+            } else {
+                return num[c1 - 1] + contarvetor(c1 - 1)
+            }
+        }
+
+        document.write(`somando o vetor num, com função recursiva: ${contarvetor(largura)}`)
+    </script>
+</body>
+</html>
